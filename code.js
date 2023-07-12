@@ -11504,6 +11504,50 @@
     eventSourceRefiners: EVENT_SOURCE_REFINERS2
   });
 
+  // node_modules/.pnpm/@fullcalendar+core@6.1.8/node_modules/@fullcalendar/core/locales/sv.js
+  var l68 = {
+    code: "sv",
+    week: {
+      dow: 1,
+      doy: 4
+      // The week that contains Jan 4th is the first week of the year.
+    },
+    buttonText: {
+      prev: "F\xF6rra",
+      next: "N\xE4sta",
+      today: "Idag",
+      year: "\xC5r",
+      month: "M\xE5nad",
+      week: "Vecka",
+      day: "Dag",
+      list: "Program"
+    },
+    buttonHints: {
+      prev(buttonText) {
+        return `F\xF6reg\xE5ende ${buttonText.toLocaleLowerCase()}`;
+      },
+      next(buttonText) {
+        return `N\xE4sta ${buttonText.toLocaleLowerCase()}`;
+      },
+      today(buttonText) {
+        return (buttonText === "Program" ? "Detta" : "Denna") + " " + buttonText.toLocaleLowerCase();
+      }
+    },
+    viewHint: "$0 vy",
+    navLinkHint: "G\xE5 till $0",
+    moreLinkHint(eventCnt) {
+      return `Visa ytterligare ${eventCnt} h\xE4ndelse${eventCnt === 1 ? "" : "r"}`;
+    },
+    weekText: "v.",
+    weekTextLong: "Vecka",
+    allDayText: "Heldag",
+    moreLinkText: "till",
+    noEventsText: "Inga h\xE4ndelser att visa",
+    closeHint: "St\xE4ng",
+    timeHint: "Klockan",
+    eventHint: "H\xE4ndelse"
+  };
+
   // src/index.ts
   window.Webflow ||= [];
   window.Webflow.push(() => {
@@ -11514,17 +11558,23 @@
     const calendar = new Calendar(calendarElement, {
       plugins: [index, index2, index3, index4],
       initialView: "dayGridMonth",
+      locale: l68,
       headerToolbar: {
-        left: "prev,next today",
+        left: "prev,next",
         center: "title",
         right: "dayGridMonth,timeGridWeek,listWeek"
       },
       googleCalendarApiKey: "AIzaSyClISbFHnM2Uqvpot8Bwzs44zZ3zDtIBzY",
-      events: {
-        googleCalendarId: "info@webbyuf.com",
-        className: "gcal-event"
-        // an option!
-      }
+      eventSources: [
+        {
+          googleCalendarId: "info@webbyuf.com",
+          color: "#8ab00e"
+        },
+        {
+          googleCalendarId: "sv.swedish#holiday@group.v.calendar.google.com",
+          color: "#d4ad22"
+        }
+      ]
     });
     calendar.render();
   });
