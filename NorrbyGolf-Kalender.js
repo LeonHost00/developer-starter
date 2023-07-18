@@ -11562,16 +11562,16 @@
       headerToolbar: {
         left: "prev,next",
         center: "title",
-        right: "dayGridMonth,timeGridWeek,listWeek"
+        right: "dayGridMonth,listWeek"
       },
       googleCalendarApiKey: "AIzaSyClISbFHnM2Uqvpot8Bwzs44zZ3zDtIBzY",
       eventSources: [
         {
-          googleCalendarId: "info@webbyuf.com",
+          googleCalendarId: "362d362520db4514364c8199c7ce7a4471759e6c3f93dd5ecf7db9ee243ad247@group.calendar.google.com",
           color: "#8ab00e"
         },
         {
-          googleCalendarId: "sv.swedish#holiday@group.v.calendar.google.com",
+          googleCalendarId: "t2i3bie6jrmjo3jt37kv97n9k29g6lor@import.calendar.google.com",
           color: "#d4ad22"
         }
       ]
