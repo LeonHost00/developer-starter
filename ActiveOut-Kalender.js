@@ -11568,11 +11568,11 @@
       eventSources: [
         {
           googleCalendarId: "info@webbyuf.com",
-          color: "#8ab00e"
+          color: "#2f622e"
         },
         {
           googleCalendarId: "sv.swedish#holiday@group.v.calendar.google.com",
-          color: "#d4ad22"
+          color: "#3e593d"
         }
       ]
     });
