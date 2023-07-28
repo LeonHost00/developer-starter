@@ -11568,11 +11568,13 @@
       eventSources: [
         {
           googleCalendarId: "angela.activeout@gmail.com",
-          color: "#2f622e"
+          color: "#2f622e",
+          eventTextColor: "#2f622e"
         },
         {
           googleCalendarId: "sv.swedish#holiday@group.v.calendar.google.com",
-          color: "#3e593d"
+          color: "#3e593d",
+          eventTextColor: "#3e593d"
         }
       ]
     });
