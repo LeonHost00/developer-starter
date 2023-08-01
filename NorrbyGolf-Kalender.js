@@ -3,7 +3,7 @@
   // bin/live-reload.js
   new EventSource(`${"http://localhost:3000"}/esbuild`).addEventListener("change", () => location.reload());
 
-  // node_modules/.pnpm/preact@10.12.1/node_modules/preact/dist/preact.module.js asdadsd
+  // node_modules/.pnpm/preact@10.12.1/node_modules/preact/dist/preact.module.js
   var n;
   var l;
   var u;
@@ -11551,28 +11551,33 @@
   // src/index.ts
   window.Webflow ||= [];
   window.Webflow.push(() => {
+    let view = "dayGridMonth";
+    let middle = "title";
+    let left = "dayGridMonth,listWeek";
     const calendarElement = document.querySelector('[data-element="calendar"]');
     if (!calendarElement)
       return;
     console.log({ calendarElement });
+    if (window.innerWidth < 992)
+      view = "listWeek", middle = "", left = "title";
     const calendar = new Calendar(calendarElement, {
       plugins: [index, index2, index3, index4],
-      initialView: "dayGridMonth",
+      initialView: view,
       locale: l68,
       headerToolbar: {
-        left: "prev,next",
-        center: "title",
-        right: "dayGridMonth,listWeek"
+        left,
+        center: middle,
+        right: "prev,next"
       },
       googleCalendarApiKey: "AIzaSyClISbFHnM2Uqvpot8Bwzs44zZ3zDtIBzY",
       eventSources: [
         {
           googleCalendarId: "362d362520db4514364c8199c7ce7a4471759e6c3f93dd5ecf7db9ee243ad247@group.calendar.google.com",
-          color: "#8ab00e"
+          color: "#d3d3d3"
         },
         {
           googleCalendarId: "t2i3bie6jrmjo3jt37kv97n9k29g6lor@import.calendar.google.com",
-          color: "#d4ad22"
+          color: "#d3d3d3"
         }
       ]
     });
