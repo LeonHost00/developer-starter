@@ -11577,7 +11577,7 @@
         },
         {
           googleCalendarId: "sv.swedish#holiday@group.v.calendar.google.com",
-          color: "#d3d3d3"
+          color: "#5A5A5A"
         }
       ]
     });
