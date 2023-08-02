@@ -11577,7 +11577,7 @@
         },
         {
           googleCalendarId: "t2i3bie6jrmjo3jt37kv97n9k29g6lor@import.calendar.google.com",
-          color: "#d3d3d3"
+          color: "#5A5A5A"
         }
       ]
     });
