@@ -11551,35 +11551,33 @@
   // src/index.ts
   window.Webflow ||= [];
   window.Webflow.push(() => {
-    let view = "dayGridMonth";
-    let middle = "title";
-    let left = "dayGridMonth,listWeek";
     const calendarElement = document.querySelector('[data-element="calendar"]');
     if (!calendarElement)
       return;
     console.log({ calendarElement });
-    if (window.innerWidth < 992)
-      view = "listWeek", middle = "", left = "title";
     const calendar = new Calendar(calendarElement, {
       plugins: [index, index2, index3, index4],
-      initialView: view,
+      initialView: "dayGridMonth",
       locale: l68,
       headerToolbar: {
-        left,
-        center: middle,
-        right: "prev,next"
+        left: "prev,next",
+        center: "title",
+        right: "dayGridMonth,timeGridWeek,listWeek"
       },
       googleCalendarApiKey: "AIzaSyClISbFHnM2Uqvpot8Bwzs44zZ3zDtIBzY",
       eventSources: [
         {
-          googleCalendarId: "angela.activeout@gmail.com",
-          color: "#d3d3d3"
+          googleCalendarId: "info@webbyuf.com",
+          color: "#8ab00e"
         },
         {
           googleCalendarId: "sv.swedish#holiday@group.v.calendar.google.com",
-          color: "#d3d3d3"
+          color: "#d4ad22"
         }
-      ]
+      ],
+      eventClick: function(info) {
+        info.jsEvent.preventDefault();
+      }
     });
     calendar.render();
   });
